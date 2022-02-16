@@ -6,7 +6,7 @@
     <% @transactions.each do |transaction|%>
         <%if transaction.from_user%>
             <li> 
-                <%= transaction.from_user.name %> gave <%= transaction.to_user.name %> <%= transaction.amount %> . 
+                <%= transaction.from_user.name %> gave <%= transaction.to_user.name %> <%= transaction.amount %> 
             </li>    
         <%else%>
             <li>
