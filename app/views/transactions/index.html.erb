@@ -1,8 +1,32 @@
 <h1>KelloggCoin Ledger</h1>
 
 <!-- Step 1: List all transaction, starting with the ICO -->
+<ol>
+
+    <% @transactions.each do |transaction|%>
+        <%if transaction.from_user%>
+            <li> 
+                <%= transaction.from_user.name %> gave <%= transaction.to_user.name %> <%= transaction.amount %> . 
+            </li>    
+        <%else%>
+            <li>
+                Initial Coin Offering: <%= transaction.amount%> to <%=transaction.to_user.name%>
+            </li>
+        <%end%>
+    <%end%>
+</ol>
 
 <!-- Step 2: Calculate and display the balances -->
+
+<ol>
+    <%User.all.each do |user|%>
+        <li>
+            Balance for <%= user.name %> is <%= user.balance%>
+        </li>
+    <%end%>
+
+</ol>
+
 
 <!-- 
 Expected balances:
